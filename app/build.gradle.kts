@@ -42,6 +42,14 @@ android {
     buildFeatures {
         compose = true
     }
+
+    buildTypes{
+
+    }
+
+    productFlavors{
+
+    }
 }
 
 dependencies {

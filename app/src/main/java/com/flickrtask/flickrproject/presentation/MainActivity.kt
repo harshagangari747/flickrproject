@@ -48,6 +48,7 @@ import com.flickrtask.flickrproject.data.models.Item
 class MainActivity : ComponentActivity() {
 
     private lateinit var viewModel: ImageViewModel
+    @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreate(savedInstanceState: Bundle?) {
 
         super.onCreate(savedInstanceState)
@@ -74,8 +75,7 @@ class MainActivity : ComponentActivity() {
 
 @RequiresApi(Build.VERSION_CODES.O)
 @Composable
-fun HomeScreen(viewModel: ImageViewModel) {
-    val state by viewModel.uiState.collectAsStateWithLifecycle()
+fun HomeScreen(viewModel: ImageViewModel) { val state by viewModel.uiState.collectAsStateWithLifecycle()
 
     val navController = rememberNavController()
 

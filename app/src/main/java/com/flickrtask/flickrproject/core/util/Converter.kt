@@ -1,20 +1,21 @@
 package com.flickrtask.flickrproject.core.util
 
-fun String.stringToUrlEncodedConverter():String{
-    return this
-//    var result = StringBuilder()
-//    try{
-//        val parts = this.split(",")
-//        var trimmedWordList = mutableListOf<String>()
-//        for(part in parts){
-//            trimmedWordList.add(part.trim())
-//        }
-//        result.append(trimmedWordList.joinToString("%2C"))
-//
-//    }
-//    catch (ex: Exception){
-//        result.append("Can't convert the string: ${ex.message.toString()}")
-//    }
-//    return result.toString()
+import android.util.Log
+
+fun String.isValidateInput(): Boolean {
+    if (this.isNullOrEmpty()) {
+        return false
+    }
+    for (ch in this) {
+
+        if (!ch.isLetter() && !ch.isWhitespace() && ch != ',') {
+            Log.d("ch", "isValidateInput: $ch")
+            return false
+        }
+
+    }
+
+    return true
+
 
 }
