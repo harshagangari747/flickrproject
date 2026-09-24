@@ -3,6 +3,7 @@ on:
   push:
     branches:
       - main
+      - release
   pull_request:
     branches:
       - main
@@ -27,7 +28,7 @@ jobs:
         run: chmod +x ./gradlew
 
       - name: Run unit tests
-        run: ./gradle test
+        run: ./gradlew test
 
       - name: Run lint
         run: ./gradlew lint
@@ -65,7 +66,7 @@ jobs:
   release:
     name: Build Release AAB
     needs: test
-    if: github.ref == 'refs/heads/main'
+    if: github.ref == 'refs/heads/release'
     runs-on: ubuntu-latest
 
     steps:
