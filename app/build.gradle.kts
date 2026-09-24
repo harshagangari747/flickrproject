@@ -43,12 +43,19 @@ android {
         compose = true
     }
 
-    buildTypes{
+    buildTypes {
 
     }
 
-    productFlavors{
+    productFlavors {
 
+    }
+
+    testOptions {
+
+        unitTests {
+            isReturnDefaultValues = true
+        }
     }
 }
 
@@ -90,4 +97,8 @@ dependencies {
     // Lifecycle & Navigation
     implementation("androidx.lifecycle:lifecycle-runtime-compose:2.8.7")
     implementation("androidx.navigation:navigation-compose:2.8.5")
+
+    testImplementation("io.mockk:mockk:1.14.11")
+    testImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.10.2")
+
 }

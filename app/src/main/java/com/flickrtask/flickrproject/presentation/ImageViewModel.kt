@@ -90,9 +90,7 @@ class ImageViewModel @Inject constructor(
                     UIState.Error(ex.localizedMessage ?: "Something went wrong")
             }
         }
-
         return job
-
     }
 
     fun currentImageSelected(item: Item) {
@@ -102,6 +100,5 @@ class ImageViewModel @Inject constructor(
             _imageViewState.value =
                 ImageViewState.Error("Error loading selected Images: ${ex.localizedMessage ?: ""}")
         }
-
     }
 }
